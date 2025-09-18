@@ -44,3 +44,25 @@ function actualizarLista(){
         lista.appendChild(li);
     }
 }
+
+
+function sortearAmigo(){
+    
+    // Se valida si el "campo esta vacio".
+    if(amigos.length === 0){
+        alert('Escribe al menos un nombre de un amigo para elegir.');
+        return;
+    }
+
+    // Generar un indice aleatorio.
+    const indice = Math.floor(Math.random() * amigos.length);
+
+    // Obtener un nombre del sorteo.
+    const amigoSorteado = amigos[indice];
+
+    // Limpiar las listas "ul".
+    document.getElementById('listaAmigos').innerHTML = "";
+
+    // Imprimir en "ul" con id "resultado" el mensaje del ganador.
+    document.getElementById('resultado').textContent = "🎉 El amigo secreto es: " + amigoSorteado;
+}
